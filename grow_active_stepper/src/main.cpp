@@ -9,15 +9,18 @@ const int STEP = 19;
 const int ENABLE = 22;
 const int DIR = 23;
 
-const char* ssid = "Pixel 6";
-const char* password = "t6bzeq2knmyr6yc";
-String serverName = "http://192.168.10.119:8008";
+// const char* ssid = "Pixel 6";
+// const char* password = "t6bzeq2knmyr6yc";
+const char* ssid = "S8";
+const char* password = "internetsucks";
+String serverName = "http://192.168.43.205:8000/activity";
 
 String serverReadings;
 int activeMinutes = 0;
+int currentActiveMinutes = 0;
 
 unsigned long lastTime = 0;
-unsigned long timerDelay = 60000;
+unsigned long timerDelay = 10000;
 
 Preferences preferences;
 AccelStepper stepper(AccelStepper::DRIVER, STEP, DIR);
@@ -25,6 +28,7 @@ AccelStepper stepper(AccelStepper::DRIVER, STEP, DIR);
 String httpGETRequest(String serverName) {
   WiFiClient client;
   HTTPClient http;
+  Serial.printf("Start http request.\n");
     
   http.begin(client, serverName);
   
@@ -51,11 +55,16 @@ void printPosition() {
 }
 
 void goToPosition(long pos) {
+  // Serial.printf("Move to new position. Current position is %ld\n", stepper.currentPosition());
+  stepper.enableOutputs();
+  delay(50);
   stepper.moveTo(pos);
   stepper.runToPosition();
   printPosition();
   preferences.begin("stepper", false);
   preferences.putLong("position", stepper.currentPosition());
+  stepper.disableOutputs();
+  delay(50);
   delay(3000);
 }
 
@@ -85,22 +94,28 @@ void setup() {
   stepper.setEnablePin(ENABLE);
   stepper.setPinsInverted(false, false, true);
   stepper.setMaxSpeed(1000.0F);
-  stepper.setAcceleration(10.0F);
+  stepper.setAcceleration(100.0F);
   delay(1000);
-  stepper.enableOutputs();
+}
+
+void fetchAndMaybeMove() {
+  if (WiFi.status() == WL_CONNECTED) {
+    serverReadings = httpGETRequest(serverName);
+    JSONVar myObject = JSON.parse(serverReadings);
+
+    JSONVar keys = myObject.keys();
+    activeMinutes = int(myObject[keys[0]]);
+    Serial.println(activeMinutes);
+    // if (activeMinutes != currentActiveMinutes) {
+      goToPosition(activeMinutes * 100);
+    //   currentActiveMinutes = activeMinutes;
+    // }
+  }
 }
 
 void loop() {
   if ((millis() - lastTime) > timerDelay) {
-    if (WiFi.status() == WL_CONNECTED) {
-      serverReadings = httpGETRequest(serverName);
-      JSONVar myObject = JSON.parse(serverReadings);
-
-      JSONVar keys = myObject.keys();
-      activeMinutes = int(myObject[keys[0]]);
-      Serial.println(activeMinutes);
-      goToPosition(activeMinutes * 1000);
-    }
+    fetchAndMaybeMove();
     lastTime = millis();
   }
 }

@@ -13,7 +13,7 @@ class Server(BaseHTTPRequestHandler):
 
     def do_GET(self):
         self._set_headers()
-        self.wfile.write(json.dumps({'minutes': hr.get_active_minutes()}).encode("utf-8"))
+        self.wfile.write(json.dumps({'minutes': hr.get_active_minutes() % 31}).encode("utf-8"))
 
 def run(server_class=HTTPServer, handler_class=Server, port=8008):
     server_address = ('', port)
