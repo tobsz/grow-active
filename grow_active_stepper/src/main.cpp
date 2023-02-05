@@ -22,7 +22,7 @@ String serverReadings;
 int activeMinutes = 0;
 
 unsigned long lastTime = 0;
-unsigned long timerDelay = 5000;
+unsigned long timerDelay = 1000;
 
 Preferences preferences;
 AccelStepper stepper(AccelStepper::DRIVER, STEP, DIR);
@@ -64,7 +64,6 @@ void goToPosition(long pos) {
   preferences.putLong("position", stepper.currentPosition());
   stepper.disableOutputs();
   delay(50);
-  delay(3000);
 }
 
 void connectToWiFi() {

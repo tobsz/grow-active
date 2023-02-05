@@ -8,6 +8,25 @@ const char *password = "67192893961044349985";
 
 const char *serverName = "http://p14s:8000/activity";
 
+const int BUFLEN = 10;
+int buf[BUFLEN];
+int bufStart = 0;
+int bufEnd = 1;
+
+void putCB(int item) {
+  buf[bufStart++] = item;
+  bufStart %= BUFLEN;
+}
+
+int getCB() {
+  int item = buf[bufEnd++];
+  bufEnd %= BUFLEN;
+  return item;
+}
+
+
+
+
 void httpPost(int minutesVal) {
   if (WiFi.status() == WL_CONNECTED) {
     WiFiClient client;
@@ -26,7 +45,7 @@ void httpPost(int minutesVal) {
 void setup() {
   Serial.begin(9600);
   WiFi.begin(ssid, password);
-  Serial.println("Connecting");
+  Serial.print("Connecting");
   while(WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -39,7 +58,15 @@ void setup() {
 
 void loop() {
   int pot = analogRead(A0) / 34;
+  putCB(pot);
   Serial.println(pot);
-  httpPost(pot);
-  delay(2000);
+  if (pot == getCB()) {
+    httpPost(pot);
+    int curPot = pot;
+    while (pot == curPot) {
+      pot = analogRead(A0) / 34;
+      delay(100);
+    }
+  }
+  delay(100);
 }
