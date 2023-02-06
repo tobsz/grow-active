@@ -4,8 +4,8 @@
 #include <WiFiClient.h>
 
 enum direction_t {
-  UP,
   DOWN,
+  UP,
 };
 
 struct valueAndDir {
@@ -86,9 +86,9 @@ void loop() {
     dir = DOWN;
     resetCB();
   }
+  valueAndDir vad = getCB();
   putCB(value, dir);
   Serial.println(value);
-  valueAndDir vad = getCB();
   if (value == vad.value && value == lastVal && dir == vad.dir) {
     httpPost(value);
     while (value == (analogRead(A0) / 34)) {
