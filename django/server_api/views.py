@@ -20,7 +20,8 @@ class ActivityView(APIView):
         Create or update the minutes for the current date
         """
         data = {
-            'date': request.data.get('date'),
+            'date': date.today(),
+            # 'date': request.data.get('date'),
             'minutes': request.data.get('minutes'),
         }
 

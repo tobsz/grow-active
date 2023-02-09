@@ -9,14 +9,14 @@ const int STEP = 19;
 const int ENABLE = 22;
 const int DIR = 23;
 
-const char *ssid = "thepromisedLAN";
-const char *password = "67192893961044349985";
-String serverName = "http://p14s:8000/today";
-// const char* ssid = "Pixel 6";
-// const char* password = "t6bzeq2knmyr6yc";
+// const char *ssid = "thepromisedLAN";
+// const char *password = "67192893961044349985";
+// String serverName = "http://p14s:8000/today";
+const char* ssid = "Pixel 6";
+const char* password = "t6bzeq2knmyr6yc";
 // const char* ssid = "S8";
 // const char* password = "internetsucks";
-// String serverName = "http://192.168.43.205:8000/activity";
+String serverName = "http://192.168.82.119:8000/today";
 
 String serverReadings;
 int activeMinutes = 0;
@@ -89,9 +89,9 @@ void setup() {
   Serial.printf("Starting position: %ld\n", stepper.currentPosition());
 
   stepper.setEnablePin(ENABLE);
-  stepper.setPinsInverted(false, false, true);
-  stepper.setMaxSpeed(1000.0F);
-  stepper.setAcceleration(100.0F);
+  stepper.setPinsInverted(true, false, true);
+  stepper.setMaxSpeed(100.0F);
+  stepper.setAcceleration(10.0F);
   delay(500);
 }
 
@@ -101,10 +101,10 @@ void fetchAndMaybeMove() {
     serverReadings = httpGETRequest(serverName);
     JSONVar myObject = JSON.parse(serverReadings);
     JSONVar keys = myObject.keys();
-    activeMinutes = int(myObject[keys[0]]);
+    activeMinutes = int(myObject[keys[1]]);
     Serial.println(activeMinutes);
     if (activeMinutes != currentMinutes) {
-      goToPosition(activeMinutes * 100);
+      goToPosition(activeMinutes * 69);
     }
   }
 }
