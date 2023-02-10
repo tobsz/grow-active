@@ -65,9 +65,14 @@ void httpPost(int minutesVal) {
 }
 
 int readValue() {
-  // int factor = 34; // for 30 steps
-  int factor = 169; // for 7 steps
-  return analogRead(A0) / factor * 5;
+  int val = analogRead(A0);
+  if (val <= 8) {return 0;}
+  if (val <= 210) {return 5;}
+  if (val <= 410) {return 10;}
+  if (val <= 610) {return 15;}
+  if (val <= 810) {return 20;}
+  if (val <= 1023) {return 25;}
+  return 30;
 }
 
 void setup() {
@@ -97,11 +102,18 @@ void loop() {
   }
   valueAndDir vad = getCB();
   putCB(value, dir);
-  Serial.println(value);
+  Serial.printf("%d,", value);
   if (value == vad.value && value == lastVal && dir == vad.dir) {
+    Serial.println();
     httpPost(value);
-    while (value == readValue()) {
-      delay(50);
+    while (true) {
+      delay(150);
+      if (readValue() > value) {
+        break;
+      }
+      if (value != 0 && readValue() == 0) {
+        break;
+      }
     }
   } else {
     delay(150);
