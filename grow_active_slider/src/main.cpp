@@ -16,12 +16,12 @@ struct valueAndDir {
 direction_t dir = UP;
 int lastVal;
 
-// const char *ssid = "thepromisedLAN";
-// const char *password = "67192893961044349985";
-// const char *serverName = "http://p14s:8000/activity";
-const char *ssid = "Pixel 6";
-const char *password = "t6bzeq2knmyr6yc";
-const char *serverName = "http://192.168.82.119:8000/activity";
+const char *ssid = "thepromisedLAN";
+const char *password = "67192893961044349985";
+const char *serverName = "http://grow-active:8000/activity";
+// const char *ssid = "Pixel 6";
+// const char *password = "t6bzeq2knmyr6yc";
+// const char *serverName = "http://192.168.82.119:8000/activity";
 
 const size_t BUFLEN = 10;
 struct valueAndDir buffer[BUFLEN];
@@ -64,6 +64,12 @@ void httpPost(int minutesVal) {
   }
 }
 
+int readValue() {
+  // int factor = 34; // for 30 steps
+  int factor = 169; // for 7 steps
+  return analogRead(A0) / factor * 5;
+}
+
 void setup() {
   Serial.begin(9600);
   WiFi.begin(ssid, password);
@@ -81,7 +87,7 @@ void setup() {
 }
 
 void loop() {
-  int value = analogRead(A0) / 34;
+  int value = readValue();
   if (value > lastVal && dir == DOWN) {
     dir = UP;
     resetCB();
@@ -94,7 +100,7 @@ void loop() {
   Serial.println(value);
   if (value == vad.value && value == lastVal && dir == vad.dir) {
     httpPost(value);
-    while (value == (analogRead(A0) / 34)) {
+    while (value == readValue()) {
       delay(50);
     }
   } else {
