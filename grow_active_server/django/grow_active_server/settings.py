@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     'p14s',
     'localhost',
     '192.168.82.119',
+    '*',
 ]
 
 # Application definition
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'server_api',
+    'gunicorn',
 ]
 
 MIDDLEWARE = [
