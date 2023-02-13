@@ -16,12 +16,13 @@ struct valueAndDir {
 direction_t dir = UP;
 int lastVal;
 
-const char *ssid = "thepromisedLAN";
-const char *password = "67192893961044349985";
-const char *serverName = "http://grow-active:8000/activity";
-// const char *ssid = "Pixel 6";
-// const char *password = "t6bzeq2knmyr6yc";
-// const char *serverName = "http://192.168.82.119:8000/activity";
+// const char *ssid = "thepromisedLAN";
+// const char *password = "67192893961044349985";
+// const char *url = "http://grow-active:8000/activity";
+const char *ssid = "Pixel 6";
+const char *password = "t6bzeq2knmyr6yc";
+const char *url = "http://werkverzeichnis.orijauch.de/activity";
+// const char *url = "http://192.168.82.119:8000/activity";
 
 const size_t BUFLEN = 10;
 struct valueAndDir buffer[BUFLEN];
@@ -54,7 +55,7 @@ void httpPost(int minutesVal) {
     WiFiClient client;
     HTTPClient http;
 
-    http.begin(client, serverName);
+    http.begin(client, url);
     http.addHeader("Content-Type", "application/json");
 
     String buffer = "{\"minutes\":" + String(minutesVal) + "}";
