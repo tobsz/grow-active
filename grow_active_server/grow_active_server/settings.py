@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,10 +27,8 @@ SECRET_KEY = 'django-insecure-n42ng0($8)#bu46bwlmr!5&c13ad36!f6ot+bv5kuq28+d8c30
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'p14s',
     'localhost',
-    '192.168.82.119',
-    '*',
+    'werkverzeichnis.orijauch.de',
 ]
 
 # Application definition
@@ -42,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'server_api',
     'gunicorn',
+    'server_api',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
