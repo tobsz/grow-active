@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+    <Tracking>
+        <ImageTarget name="Testtarget" size="1.000000 1.332564"/>
+        <ImageTarget name="RealTarget" size="1.000000 1.332564"/>
+        <ImageTarget name="Image_FLowe" size="1.000000 1.332564"/>
+        <ImageTarget name="Image" size="1.000000 1.332564"/>
+        <ImageTarget name="Blatt3" size="1.000000 1.333333"/>
+        <ImageTarget name="Blatt2" size="1.000000 1.333333"/>
+        <ImageTarget name="Blatt1" size="1.000000 1.333333"/>
+        <ImageTarget name="Ar_Target" size="1.000000 1.407524"/>
+        <ImageTarget name="non-rectangular-image-targets" size="0.050000 0.037500"/>
+        <ImageTarget name="Image_Target" size="0.050000 0.066667"/>
+        <ImageTarget name="Deck" size="1.000000 2.412250"/>
+        <ImageTarget name="Ar_image" size="0.100000 0.133495"/>
+        <ImageTarget name="object.Top" size="0.433000 0.577000"/>
+        <ImageTarget name="object.Bottom" size="0.433000 0.577000"/>
+        <MultiTarget name="object">
+            <Part name="object.Top" translation="0 0.5 0" rotation="AD: 1 0 0 -90"/>
+            <Part name="object.Bottom" translation="0 -0.5 0" rotation="AD: 1 0 0 90"/>
+        </MultiTarget>
+    </Tracking>
+</QCARConfig>

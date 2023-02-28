@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="ScheibeObenNext" motionHint="static" trackingMode="car" optimizeTrackingFor="low_feature_objects"/>
+
+</Tracking>
+
+<Assembly name="ScheibeObenNexts_assembly" assemblyId="df3cf44d47fa4cd3b8d062224960d51c">
+<Part name="ScheibeObenNext" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0001" translation="-0.0152289 -0.00721155 0.275719" rotation="AD: 1 -0.00312526 0.148712 182.382" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0000" translation="0.00916368 -0.0125212 0.243326" rotation="AD: 1 -0.00280281 0.076939 184.16" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>
