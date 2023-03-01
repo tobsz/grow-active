@@ -1,5 +1,5 @@
 # Grow-active
-Web server &amp; esp32 program for the data physicalization "Grow Active"
+
 ## Short description: 
 Grow Active helps you build a healthy, active lifestyle routine. Inspired by indoor plants, which only grow when taken care of, the mechanical plant leaf slowly opens when the user engages in physical activity.
 ## Description:
