@@ -3,6 +3,12 @@ Web server &amp; esp32 program for the data physicalization "Grow Active"
 ## Short description: 
 Grow Active helps you build a healthy, active lifestyle routine. Inspired by indoor plants, which only grow when taken care of, the mechanical plant leaf slowly opens when the user engages in physical activity.
 ## Description:
+
+Physical activity is essential to our health. However, most people working from home struggle to be active enough for various reasons. Since there is little direct daily feedback, staying motivated and continuously active is hard. Moreover, there is a general lack of knowledge about the right amount of activity. And sometimes, one simply forgets to engage in some physical activity. As a result, physical inactivity increases the risk of suffering from heart disease in the long term or of developing other promoting risk factors, such as high blood pressure or obesity.
+
+Grow Active helps you build a healthy, active lifestyle routine. Inspired by indoor plants, which only grow when taken care of, the mechanical plant leaf slowly opens when the user engages in physical activity. The user's smartwatch tracks their time in an activity-indicating heart rate zone and sends this data to the plant. It takes 30 min of activity to open the leaf completely, following the Harvard School of Public Health’s recommendation for an optimal amount of daily activity. Furthermore, Grow Active helps you to establish your new routine of daily activity through frequent repetition. With an AR application, you can view more detailed information and engage in a 30-day challenge to stay on track. Your performance in the challenge is visualized through a colored heatmap on top of the leaf within the AR.
+
+Grow Active is a constant reminder in your home, allowing you to read your daily activity status intuitively. In addition, the flourishing plant serves as a physical representation of your self-care and engagement in an active lifestyle to promote your health.
 ### Leaf operation:
 
 When you see the paper leaf unfolding, this movement is driven by a stepper motor, which can target 30 positions for 
