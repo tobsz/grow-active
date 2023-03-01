@@ -89,7 +89,6 @@ Firas Drass
 Tobias Sandmann 
 
 ## License: 
-MIT License
 
 Copyright (c) [2023] [Grow_Active]
 
