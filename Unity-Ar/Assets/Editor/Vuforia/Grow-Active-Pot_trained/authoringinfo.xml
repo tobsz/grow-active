@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<QCARInfo>
+    <TargetSet version="36.0" toolVersion="v5.7.6">
+        <ModelTarget name="Grow-Active-Pot_trained" targetId="6d2f515de159414792044899078c2800" version="13.0" toolVersion="v5.7.6" bbox="-0.069067 -0.069067 -0.000067 0.069067 0.069067 0.100045" trackingMode="car" upVector="0.0 0.0 1.0" optimizeTrackingFor="default" realisticTextures="no" />
+    </TargetSet>
+    <Assembly name="Grow-Active-Pot_trained" assemblyId="b89d5a6ccd3043ce91ac4857bc266a04">
+        <Part name="Grow-Active-Pot_trained" translation="0 0 0" rotation="AD: 0 0 1 0" />
+        <EntryPoint name="(none)" trained="yes" />
+    </Assembly>
+</QCARInfo>

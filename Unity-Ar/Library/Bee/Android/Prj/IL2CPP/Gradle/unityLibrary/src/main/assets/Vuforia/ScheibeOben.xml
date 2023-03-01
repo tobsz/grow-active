@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="ScheibeOben" motionHint="adaptive" trackingMode="car" optimizeTrackingFor="default"/>
+
+</Tracking>
+
+<Assembly name="ScheibeObens_assembly" assemblyId="78d1007216144c95a7902ef6564a6a25">
+<Part name="ScheibeOben" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0000" translation="0.00152302 0.144551 0.190752" rotation="AD: 0.936458 -0.896986 0.614788 131.807" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0001" translation="-0.000873875 0.171333 0.101742" rotation="AD: 0.878484 -0.900464 0.994419 117.653" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0002" translation="0.00195839 0.0164934 0.254761" rotation="AD: 0.99524 -0.941603 0.14343 167.44" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0003" translation="-0.0345623 0.165314 0.117511" rotation="AD: -0.165459 1.5297 -1.3031 187.998" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0004" translation="0.0171197 0.169045 0.112025" rotation="AD: 0.978017 -0.576809 0.584265 104.391" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0005" translation="0.00926058 0.15243 0.163092" rotation="AD: 0.963208 -0.736788 0.553139 123.038" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0006" translation="-0.00174506 0.171545 0.0995977" rotation="AD: 0.869812 -0.913833 1.02176 118.152" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0007" translation="0.00582522 0.0651645 0.234242" rotation="AD: 0.999999 0.0170343 0.0866993 157.853" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0008" translation="0.0676602 0.108195 0.17656" rotation="AD: 0.334518 2.69284 -1.0621 212.456" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0011" translation="-0.00102633 0.0900541 0.257936" rotation="AD: 0.993028 0.994075 -0.169105 165.89" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0009" translation="0.0411523 0.0935322 0.249777" rotation="AD: 0.979092 0.933523 -0.302396 174.591" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="27.0" toolVersion="10.13.3">
+<ModelTarget name="Grow-Active-Pot" targetId="ee2b71ff9cb546139a727ccf1c022314" version="14.0" toolVersion="10.13.3" bbox="-0.069067 -0.069067 -0.000067 0.069067 0.069067 0.100045" previewImage="ee2b71ff9cb546139a727ccf1c022314_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="Grow-Active-Pots_assembly" assemblyId="5a93156f7e754a83bc8d89c61d47d54c">
+<Part name="Grow-Active-Pot" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0000" translation="4.76939e-09 0.0499881 0.366857" rotation="AD: 0.868737 -0.947696 0.952684 122.751" image="Grow-Active-Pot_GuideView_0000.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0001" translation="-6.9449e-09 0.0499664 0.331708" rotation="AD: 0.888176 -0.899764 0.927068 119.454" image="Grow-Active-Pot_GuideView_0001.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0002" translation="-1.16415e-09 0.0484677 0.345439" rotation="AD: 1 0.0212656 -0.0165637 104.19" image="Grow-Active-Pot_GuideView_0002.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0003" translation="2.32831e-10 0.0492913 0.341523" rotation="AD: 0.999983 0.0954712 -0.0807054 100.02" image="Grow-Active-Pot_GuideView_0003.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0004" translation="-8.73115e-10 0.0499258 0.33571" rotation="AD: 0.999994 0.0706606 -0.0672001 93.1465" image="Grow-Active-Pot_GuideView_0004.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0005" translation="3.49246e-10 0.0498249 0.337246" rotation="AD: 1 0.0366792 -0.0338226 94.7115" image="Grow-Active-Pot_GuideView_0005.png" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARInfo>

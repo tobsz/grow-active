@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="27.0" toolVersion="10.13.3">
+<ModelTarget name="ScheibeObenNext" targetId="8a243996bab74264a5f24d49b590a07a" version="14.0" toolVersion="10.13.3" bbox="0.020260 -0.015515 0.160772 0.050502 0.015515 0.176552" previewImage="8a243996bab74264a5f24d49b590a07a_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="ScheibeObenNexts_assembly" assemblyId="df3cf44d47fa4cd3b8d062224960d51c">
+<Part name="ScheibeObenNext" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0001" translation="-0.0152289 -0.00721155 0.275719" rotation="AD: 1 -0.00312526 0.148712 182.382" image="ScheibeObenNext_GuideView_0001.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0000" translation="0.00916368 -0.0125212 0.243326" rotation="AD: 1 -0.00280281 0.076939 184.16" image="ScheibeObenNext_GuideView_0000.png" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARInfo>

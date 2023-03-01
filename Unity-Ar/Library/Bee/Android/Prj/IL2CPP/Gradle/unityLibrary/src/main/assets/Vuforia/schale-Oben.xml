@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="schale-Oben" motionHint="static" trackingMode="car" optimizeTrackingFor="low_feature_objects"/>
+
+</Tracking>
+
+<Assembly name="schale-Obens_assembly" assemblyId="54f3ca9798394a44a5a15bf489c3d3db">
+<Part name="schale-Oben" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0001" translation="1.56648e-06 0.0649417 0.319838" rotation="AD: 0.534826 1.55361 -1.09243 158.418" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0000" translation="1.55717e-06 0.0649417 0.294094" rotation="AD: 0.534826 1.55361 -1.09243 158.418" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0002" translation="1.62469e-06 0.0687149 0.277126" rotation="AD: 0.491664 1.37303 -1.2515 153.747" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0003" translation="1.63168e-06 0.0640346 0.318307" rotation="AD: 0.561872 1.5691 -1.06053 158.237" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>
