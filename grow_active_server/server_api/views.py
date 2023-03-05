@@ -14,7 +14,7 @@ class ActivityView(APIView):
         activities = Activity.objects
         serializer = ActivitySerializer(activities, many = True)
         return Response(serializer.data, status=status.HTTP_200_OK)
-    
+
     def post(self, request, *args, **kwargs):
         """
         Create or update the minutes for the current date
@@ -35,7 +35,7 @@ class ActivityView(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        
+
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ActivityTodayView(APIView):
@@ -43,8 +43,13 @@ class ActivityTodayView(APIView):
         """
         Get the activity minutes of the current day
         """
-        activity = Activity.objects.get(date=date.today())
-        print(activity)
-        serializer = ActivitySerializer(activity)
-        print(serializer.data)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        activities = Activity.objects
+        serializer = ActivitySerializer(activities, many = True)
+        try:
+            activity = Activity.objects.get(date=date.today())
+            print(activity)
+            serializer = ActivitySerializer(activity)
+            print(serializer.data)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Activity.DoesNotExist:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
