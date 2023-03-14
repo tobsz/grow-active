@@ -9,11 +9,15 @@ const int STEP = 19;
 const int ENABLE = 22;
 const int DIR = 23;
 
+const int FACTOR = 69;
+
 // const char *ssid = "thepromisedLAN";
 // const char *password = "67192893961044349985";
 // const char *url = "https://growactive:8000/today";
-const char *ssid = "Pixel 6";
-const char *password = "t6bzeq2knmyr6yc";
+// const char *ssid = "Pixel 6";
+// const char *password = "t6bzeq2knmyr6yc";
+const char *ssid = "CityLAB-Guest";
+const char *password = "Tempelhof";
 const char *url = "https://werkverzeichnis.orijauch.de/today";
 // const char* ssid = "S8";
 // const char* password = "internetsucks";
@@ -120,7 +124,7 @@ void fetchAndMaybeMove() {
     activeMinutes = int(myObject[keys[1]]);
     Serial.println(activeMinutes);
     if (activeMinutes != currentMinutes) {
-      goToPosition(activeMinutes * 69);
+      goToPosition(activeMinutes * FACTOR);
     }
   }
 }
@@ -139,7 +143,7 @@ void setup() {
   stepper.setEnablePin(ENABLE);
   stepper.setPinsInverted(true, false, true);
   stepper.setMaxSpeed(100.0F);
-  stepper.setAcceleration(10.0F);
+  stepper.setAcceleration(50.0F);
   delay(500);
 }
 

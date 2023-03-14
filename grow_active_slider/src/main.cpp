@@ -19,8 +19,10 @@ int lastVal;
 // const char *ssid = "thepromisedLAN";
 // const char *password = "67192893961044349985";
 // const char *url = "http://grow-active:8000/activity";
-const char *ssid = "Pixel 6";
-const char *password = "t6bzeq2knmyr6yc";
+// const char *ssid = "Pixel 6";
+// const char *password = "t6bzeq2knmyr6yc";
+const char *ssid = "CityLAB-Guest";
+const char *password = "Tempelhof";
 const char *url = "https://werkverzeichnis.orijauch.de/activity";
 // const char *url = "http://192.168.82.119:8000/activity";
 
